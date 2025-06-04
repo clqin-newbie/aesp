@@ -28,7 +28,7 @@ docs = [
 ]
 
 [project.urls]
-Documentation = "https://pymatsci.top"
+Documentation = "https://clqin-newbie.github.io/aesp/"
 Repository = "https://github.com/clqin-newbie/aesp.git"
 
 [project.scripts]
