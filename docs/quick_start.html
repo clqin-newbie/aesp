@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. Quick start &#8212; AESP  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'quick_start';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Theoretical Background" href="background.html" />
+    <link rel="prev" title="2. Installation" href="install.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AESP  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Guide</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">2. Installation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Quick start</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="background.html">1. Theoretical Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_cli.html">2. Guide on aesp commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">3. Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input_script.html">4. Input script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input_args.html">5. Arguments of the input script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputs.html">6. outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">7. Gui</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="examples/emt_mg_3d_local.html">1. EMT-MgAl-3D-local</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/matgl_alcl_3d_local.html">2. Matgl-Al-3D-local</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Citations &amp; Publications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="citations.html">1. Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">2. Publications</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/quick_start.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Quick start</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">3.1. Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">3.2. Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">3.3. Practice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-input-file">3.3.1. Preparing the input file</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="quick-start">
+<h1><span class="section-number">3. </span>Quick start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h1>
+<p>This is a quick start guide for structure prediction using AESP, through which you can quickly understand the paradigm
+cycle that AESP operates in and apply it to your projects.</p>
+<section id="task">
+<h2><span class="section-number">3.1. </span>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<p>Master the Paradigm Cycle for using AESP and learn how to apply it to using AESP with a complete case study.</p>
+<p>By the end of this tutorial, you will be able to:</p>
+<ul class="simple">
+<li><p>Preparation of input files for AESP</p></li>
+<li><p>Familiarity with the structure prediction process of AESP</p></li>
+</ul>
+<p>Work through this tutorial. It will take you 20 minutes, max!</p>
+</section>
+<section id="background">
+<h2><span class="section-number">3.2. </span>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>In this tutorial, we will take the aluminum metal (Al) as an example to provide a detailed
+introduction to the training and application of the AESP. Also for demonstration purposes,
+we use the effective medium theory (EMT) in <a class="reference external" href="https://wiki.fysik.dtu.dk/ase/">ASE</a> for
+structural relaxation. AESP is a software tool that employs adaptive evolutionary algorithm for structure prediction.</p>
+</section>
+<section id="practice">
+<h2><span class="section-number">3.3. </span>Practice<a class="headerlink" href="#practice" title="Link to this heading">#</a></h2>
+<section id="preparing-the-input-file">
+<h3><span class="section-number">3.3.1. </span>Preparing the input file<a class="headerlink" href="#preparing-the-input-file" title="Link to this heading">#</a></h3>
+<p>The input file is in json format and named std-bulk.json.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
+<span class="go">    &quot;dflow_config&quot; : {</span>
+<span class="go">        &quot;mode&quot; : &quot;debug&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;aesp_config&quot; : {</span>
+<span class="go">        &quot;type&quot; : &quot;std-sp&quot;,</span>
+<span class="go">        &quot;opt_params&quot; : {</span>
+<span class="go">            &quot;generation&quot; : {</span>
+<span class="go">                &quot;adaptive&quot; : {}</span>
+<span class="go">            },</span>
+<span class="go">            &quot;population&quot; : {</span>
+<span class="go">                &quot;adaptive&quot; : {}</span>
+<span class="go">            },</span>
+<span class="go">            &quot;operator&quot; : {</span>
+<span class="go">                &quot;type&quot; : &quot;bulk&quot;,</span>
+<span class="go">                &quot;generator&quot; : {</span>
+<span class="go">                    &quot;random_gen_params&quot; : {</span>
+<span class="go">                        &quot;composition&quot; : {&quot;Al&quot;: 8}</span>
+<span class="go">                    }</span>
+<span class="go">                },</span>
+<span class="go">                &quot;mutation&quot; : {</span>
+<span class="go">                    &quot;strain_mut_params&quot; : {},</span>
+<span class="go">                    &quot;permutation_mut_params&quot; : {},</span>
+<span class="go">                    &quot;ripple_mut_params&quot; : {}</span>
+<span class="go">                },</span>
+<span class="go">                &quot;crossover&quot; : {</span>
+<span class="go">                    &quot;plane_cross_params&quot; : {},</span>
+<span class="go">                    &quot;sphere_cross_params&quot; : {},</span>
+<span class="go">                    &quot;cylinder_cross_params&quot; : {}</span>
+<span class="go">                },</span>
+<span class="go">                &quot;adaptive&quot; : {},</span>
+<span class="go">                &quot;hard_constrains&quot; : {</span>
+<span class="go">                    &quot;tol_matrix&quot; : {}</span>
+<span class="go">                }</span>
+<span class="go">            },</span>
+<span class="go">            &quot;cvg_criterion&quot; : {}</span>
+<span class="go">        },</span>
+<span class="go">        &quot;calc_stages&quot; : [</span>
+<span class="go">            {</span>
+<span class="go">                &quot;type&quot; : &quot;emt&quot;,</span>
+<span class="go">                &quot;inputs_config&quot; : {},</span>
+<span class="go">                &quot;run_config&quot; : {}</span>
+<span class="go">            }</span>
+<span class="go">        ],</span>
+<span class="go">        &quot;step_configs&quot; : {}</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>At this point, we type <code class="docutils literal notranslate"><span class="pre">aesp</span> <span class="pre">submit</span> <span class="pre">std-buld.json</span></code> in the terminal to submit the task, and you can see the output of the terminal</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>aesp<span class="w"> </span>submit<span class="w"> </span>std-buld.json
+<span class="go">    _         _____      ____       ____</span>
+<span class="go">   / \       | ____|    / ___|     |  _ \</span>
+<span class="go">  / _ \      |  _|      \___ \     | |_) |</span>
+<span class="go"> / ___ \     | |___      ___) |    |  __/</span>
+<span class="go">/_/   \_\    |_____|    |____/     |_|</span>
+
+<span class="go">v2025.10.1</span>
+
+<span class="go">*AESP* 2025-05-12 10:10 [INFO]: Input file being checked for correctness</span>
+<span class="go">*AESP* 2025-05-12 10:10 [INFO]: The complete input file will be written to input-std-bulk.json</span>
+<span class="go">*AESP* 2025-05-12 10:10 [INFO]: The structure prediction is about to start</span>
+<span class="go">*AESP* 2025-05-12 10:10 [INFO]: Structure prediction (Standard)</span>
+<span class="go">Workflow is running locally (ID: std-sp-szvl6)</span>
+</pre></div>
+</div>
+<p>However, this submission is not very convenient. For a large task, the computation can take up
+to several weeks, so we can submit it to run in the background. Use the <code class="docutils literal notranslate"><span class="pre">nohup</span></code> command that
+comes with linux, which is <code class="docutils literal notranslate"><span class="pre">nohup</span> <span class="pre">aesp</span> <span class="pre">submit</span> <span class="pre">std-bulk.json</span> <span class="pre">&gt;</span> <span class="pre">calc.log</span> <span class="pre">2&gt;&amp;1</span> <span class="pre">&amp;</span></code></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>nohup<span class="w"> </span>aesp<span class="w"> </span>submit<span class="w"> </span>std-bulk.json<span class="w"> </span>&gt;<span class="w"> </span>calc.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
+
+<span class="go">[1] 136412</span>
+
+<span class="gp">$ </span>ls
+
+<span class="go">calc.log  input-std-bulk.json  std-bulk.json  std-sp-szvl6  upload</span>
+</pre></div>
+</div>
+<p>At this point, we can check the status of the task by using the <code class="docutils literal notranslate"><span class="pre">status</span></code> command
+, and we can also use the <code class="docutils literal notranslate"><span class="pre">watch</span></code> command to monitor the status in real time.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>aesp<span class="w"> </span>status<span class="w"> </span>std-bulk.json<span class="w"> </span>std-sp-szvl6/
+
+<span class="go">...</span>
+<span class="go">Mode : std-sp</span>
+<span class="go">Workflow : Running</span>
+<span class="go">Current step : relax-run--g1-s1-0 Running</span>
+
+<span class="gp">$ </span>watch<span class="w"> </span>-n<span class="w"> </span><span class="m">60</span><span class="w"> </span>aesp<span class="w"> </span>status<span class="w"> </span>std-bulk.json<span class="w"> </span>std-sp-szvl6/
+
+<span class="go">...</span>
+<span class="go">Mode : std-sp</span>
+<span class="go">Workflow : Succeeded</span>
+<span class="go">Current step : scheduler-gen--g10 Succeeded</span>
+</pre></div>
+</div>
+<p>When Workflow shows Succeeded it means that the workflow has completed
+successfully, so the results of the calculation can be further processed with
+the <code class="docutils literal notranslate"><span class="pre">analysis</span></code> command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>aesp<span class="w"> </span>analysis<span class="w"> </span>std-bulk.json<span class="w"> </span>std-sp-szvl6/
+
+<span class="go">...</span>
+<span class="go">*AESP* 2025-01-24 21:40 [INFO]: Input file being checked for correctness</span>
+<span class="go">*AESP* 2025-01-24 21:40 [INFO]: The complete input file will be written to input-std-bulk.json</span>
+<span class="go">*AESP* 2025-01-24 21:40 [INFO]: The output results are being analyzed</span>
+<span class="go">...</span>
+
+<span class="gp">$ </span>ls
+<span class="go">calc.log  input-std-bulk.json  results  std-bulk.json  std-sp-szvl6  upload</span>
+</pre></div>
+</div>
+<p>At this point, the folder has an additional results folder, which holds the
+structures (unrelaxed and relaxed) obtained from the inclusion of the predictions
+, a summary of the structure predictions (summary), and a plot of the parameter
+changes (html).</p>
+<p>On the other hand, we can also analyze the results in a more convenient way,
+namely visualization</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>aesp<span class="w"> </span>gui
+
+<span class="go">...</span>
+<span class="go">NiceGUI ready to go on http://localhost:8080, http://172.17.0.1:8080, http://172.23.26.105:8080, http://192.168.122.1:8080, http://192.168.123.170:8080, http://192.168.193.42:8080, and http://192.168.49.1:8080</span>
+<span class="go">NiceGUI is on air at https://asia-south.on-air.io/devices/0u9iuaH0/</span>
+</pre></div>
+</div>
+<p>The top one is the local link and the bottom one is the global link. Open the
+link to see a visualization of the page</p>
+<img alt="_images/gui-1.png" src="_images/gui-1.png" />
+<p>Tap into each piece of data to also get a visualization and specific information
+about the structure</p>
+<img alt="_images/gui-2.png" src="_images/gui-2.png" />
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="install.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Installation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="background.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Theoretical Background</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">3.1. Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">3.2. Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">3.3. Practice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-input-file">3.3.1. Preparing the input file</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By C.L. Qin
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, C.L. Qin.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

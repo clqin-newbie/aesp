@@ -1,6 +1,0 @@
-/home/clqin/.conda/envs/aesp/lib/python3.11/site-packages/dscribe/core/system.py:90: FutureWarning: Please use atoms.calc
-  calculator=atoms.get_calculator(),
-/home/clqin/.conda/envs/aesp/lib/python3.11/site-packages/dpdata/system.py:1106: UserWarning: Data type spins is registered twice; only the newly registered one will be used.
-  warnings.warn(
-/home/clqin/.conda/envs/aesp/lib/python3.11/site-packages/dpdata/system.py:1106: UserWarning: Data type force_mags is registered twice; only the newly registered one will be used.
-  warnings.warn(

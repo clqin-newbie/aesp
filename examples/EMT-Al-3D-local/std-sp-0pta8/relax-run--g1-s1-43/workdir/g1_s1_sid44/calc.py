@@ -1,1 +1,0 @@
-/home/clqin/work/aesp/aesp/examples/EMT-Al-3D-local/std-sp-0pta8/relax-prep--g1-s1/workdir/tmp/outputs/artifacts/task_paths/g1_s1_sid44/calc.py
