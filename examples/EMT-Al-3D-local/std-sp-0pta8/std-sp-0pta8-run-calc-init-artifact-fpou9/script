@@ -1,0 +1,7 @@
+import os, json
+os.makedirs(r'/home/clqin/work/aesp/aesp/examples/EMT-Al-3D-local/std-sp-0pta8/std-sp-0pta8-run-calc-init-artifact-fpou9/workdir/tmp/outputs/artifacts/log/.dflow', exist_ok=True)
+with open(r'/home/clqin/work/aesp/aesp/examples/EMT-Al-3D-local/std-sp-0pta8/std-sp-0pta8-run-calc-init-artifact-fpou9/workdir/tmp/outputs/artifacts/log/.dflow/init', 'w') as f:
+    json.dump({'path_list': []}, f)
+os.makedirs(r'/home/clqin/work/aesp/aesp/examples/EMT-Al-3D-local/std-sp-0pta8/std-sp-0pta8-run-calc-init-artifact-fpou9/workdir/tmp/outputs/artifacts/labeled_data/.dflow', exist_ok=True)
+with open(r'/home/clqin/work/aesp/aesp/examples/EMT-Al-3D-local/std-sp-0pta8/std-sp-0pta8-run-calc-init-artifact-fpou9/workdir/tmp/outputs/artifacts/labeled_data/.dflow/init', 'w') as f:
+    json.dump({'path_list': []}, f)

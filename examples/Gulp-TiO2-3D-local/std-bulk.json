@@ -1,0 +1,58 @@
+{
+	"dflow_config" : {
+		"mode" : "debug"
+	},
+	"aesp_config" : {
+		"type" : "std-sp",
+		"opt_params" : {
+            "generation" : {
+				"gen_size" : 30,
+				"adaptive" : {}
+            },
+            "population" : {
+				"pop_size" : 20,
+				"adaptive" : {}
+        	},
+			"operator" : {
+				"type" : "bulk",
+				"generator" : {
+					"random_gen_params" : {
+						"composition" : {"Ti": 16, "O": 32}
+					}
+				},
+				"mutation" : {
+					"strain_mut_params" : {},
+					"permutation_mut_params" : {},
+					"ripple_mut_params" : {}
+				},
+				"crossover" : {
+					"plane_cross_params" : {},
+					"sphere_cross_params" : {},
+					"cylinder_cross_params" : {}
+				},
+				"adaptive" : {},
+				"hard_constrains" : {
+					"tol_matrix" : {}
+				}
+			},
+			"cvg_criterion" : {
+				"max_gen_num" : 10
+			}
+        },
+		"calc_stages" : [
+			{
+				"type" : "gulp",
+				"task_max" : 1,
+				"pstress" : 0.0,
+				"inputs_config" : {
+					"kw_file": "./kw.gin",
+					"pp_file": "./pp.gin"
+				},
+				"run_config" : {
+					"command" : "module load gulp; gulp"
+				}
+			}
+		],
+		"step_configs" : {}
+    }
+}

@@ -1,0 +1,57 @@
+import os, sys, json
+package_root = r'/home/clqin/work/aesp/aesp/examples/EMT-Al-3D-local/std-sp-0pta8/relax-run--g2-s1-19/workdir/tmp/inputs/artifacts/dflow_python_packages'
+catalog_dir = os.path.join(package_root, '.dflow')
+if os.path.exists(catalog_dir):
+    for f in os.listdir(catalog_dir):
+        with open(os.path.join(catalog_dir, f), 'r') as fd:
+            for item in json.load(fd)['path_list']:
+                path = os.path.join(package_root, os.path.dirname(item['dflow_list_item']))
+                sys.path.insert(0, path)
+                os.environ['PYTHONPATH'] = path + ':' + os.environ.get('PYTHONPATH', '')
+import json
+from dflow import config, jsonpickle, s3_config
+config.update(jsonpickle.loads(r'''{"host": "https://127.0.0.1:2746", "namespace": "argo", "token": null, "k8s_config_file": null, "k8s_api_server": null, "private_key_host_path": null, "save_path_as_parameter": false, "catalog_dir_name": ".dflow", "archive_mode": "tar", "util_image": "python:3.8", "util_image_pull_policy": null, "extender_image": "dptechnology/dflow-extender", "extender_image_pull_policy": null, "dispatcher_image": "dptechnology/dpdispatcher", "dispatcher_image_pull_policy": null, "save_keys_in_global_outputs": false, "mode": "debug", "lineage": null, "register_tasks": false, "http_headers": {}, "workflow_annotations": {}, "overwrite_reused_artifact": true, "detach": false, "debug_copy_method": "symlink", "debug_pool_workers": null, "debug_batch_size": null, "debug_batch_interval": 30, "detect_empty_dir": true, "artifact_register": {}, "debug_s3": false, "debug_workdir": ".", "debug_artifact_dir": ".", "debug_failfast": false, "debug_save_copy_method": "symlink", "raise_for_group": false, "dispatcher_debug": false, "dereference_symlink": false}'''))
+s3_config.update(jsonpickle.loads(r'''{"endpoint": "127.0.0.1:9000", "console": "http://127.0.0.1:9001", "access_key": "admin", "secret_key": "password", "secure": false, "bucket_name": "my-bucket", "repo_key": null, "repo": null, "repo_type": "s3", "repo_prefix": "", "prefix": "", "storage_client": null, "extra_prefixes": []}'''))
+
+import os, sys, traceback
+from dflow.python import OPIO, TransientError, FatalError
+from dflow.python.utils import handle_input_artifact, handle_input_parameter
+from dflow.python.utils import handle_output_artifact, handle_output_parameter, handle_lineage
+from aesp.workflow.op.prep_run_calc import RunCalc
+
+op_obj = RunCalc()
+op_obj.key = 'relax-run--g2-s1-19'
+if op_obj.key.startswith('{'): op_obj.key = None
+op_obj.workflow_name = 'std-sp-0pta8'
+if __name__ == '__main__':
+    input = OPIO()
+    input_sign = RunCalc.get_input_sign()
+    output_sign = RunCalc.get_output_sign()
+    input['task_path'] = handle_input_artifact('task_path', input_sign['task_path'], 19, r'/home/clqin/work/aesp/aesp/examples/EMT-Al-3D-local/std-sp-0pta8/relax-run--g2-s1-19/workdir/tmp', None, n_parts=None, keys_of_parts=None, prefix=None)
+    input['task_name'] = handle_input_parameter('task_name', r'''["g2_s1_sid51", "g2_s1_sid52", "g2_s1_sid53", "g2_s1_sid54", "g2_s1_sid55", "g2_s1_sid56", "g2_s1_sid57", "g2_s1_sid58", "g2_s1_sid59", "g2_s1_sid60", "g2_s1_sid61", "g2_s1_sid62", "g2_s1_sid63", "g2_s1_sid64", "g2_s1_sid65", "g2_s1_sid66", "g2_s1_sid67", "g2_s1_sid68", "g2_s1_sid69", "g2_s1_sid70", "g2_s1_sid71", "g2_s1_sid72", "g2_s1_sid73", "g2_s1_sid74", "g2_s1_sid75", "g2_s1_sid76", "g2_s1_sid77", "g2_s1_sid78", "g2_s1_sid79", "g2_s1_sid80", "g2_s1_sid81", "g2_s1_sid82", "g2_s1_sid83", "g2_s1_sid84", "g2_s1_sid85", "g2_s1_sid86", "g2_s1_sid87", "g2_s1_sid88", "g2_s1_sid89", "g2_s1_sid90", "g2_s1_sid91", "g2_s1_sid92", "g2_s1_sid93", "g2_s1_sid94", "g2_s1_sid95", "g2_s1_sid96", "g2_s1_sid97", "g2_s1_sid98", "g2_s1_sid99", "g2_s1_sid100"]''', input_sign['task_name'], 19, r'/home/clqin/work/aesp/aesp/examples/EMT-Al-3D-local/std-sp-0pta8/relax-run--g2-s1-19/workdir/tmp')
+    input['calc_config'] = handle_input_parameter('calc_config', r'''[{"type": "emt", "run_config": {"command": "python", "out": "data", "log": "calc.log"}, "task_max": 10, "pstress": 0.0, "inputs": {"py/object": "aesp.calculator.emt.EmtInputs", "pstress": 0.0, "_incar_template": "\nfrom ase.constraints import UnitCellFilter\nfrom ase.io import read, write\nfrom ase.optimize import LBFGS\nfrom ase.calculators.emt import EMT\n\nf_max = 0.05 \nstep_max = 1000\nrelax_cell = True\npstress = 0.0\n\n# kBar to eV/A^3\naim_stress = 1.0 * pstress * 0.01 * 0.6242 / 10.0\n\nase_atom = read(\"POSCAR\")\nase_atom.calc = EMT()\nif relax_cell:\n    ucf = UnitCellFilter(ase_atom, scalar_pressure=aim_stress)\n    # opt\n    opt = LBFGS(ucf, trajectory='relax.traj')\n    opt.run(fmax=f_max, steps=step_max)\nelse:\n    opt = LBFGS(trajectory='relax.traj')\n    opt.run(fmax=f_max, steps=step_max)\nwrite('CONTCAR', ase_atom, format='vasp')\n"}}]''', input_sign['calc_config'], None, r'/home/clqin/work/aesp/aesp/examples/EMT-Al-3D-local/std-sp-0pta8/relax-run--g2-s1-19/workdir/tmp')
+    input['stage'] = handle_input_parameter('stage', r'''1''', input_sign['stage'], None, r'/home/clqin/work/aesp/aesp/examples/EMT-Al-3D-local/std-sp-0pta8/relax-run--g2-s1-19/workdir/tmp')
+    op_obj.tmp_root = '/home/clqin/work/aesp/aesp/examples/EMT-Al-3D-local/std-sp-0pta8/relax-run--g2-s1-19/workdir/tmp'
+    op_obj.create_slice_dir = False
+    op_obj.slices['log'] = 19
+    op_obj.slices['labeled_data'] = 19
+    op_obj.pool_size = None
+    import signal
+    def sigterm_handler(signum, frame):
+        print('Got SIGTERM')
+        raise RuntimeError('Got SIGTERM')
+    signal.signal(signal.SIGTERM, sigterm_handler)
+    try:
+        try:
+            output = op_obj.execute(input)
+        except Exception as e:
+            if op_obj.outputs:
+                op_obj.handle_outputs(op_obj.outputs)
+            raise e
+    except TransientError:
+        traceback.print_exc()
+        sys.exit(1)
+    except FatalError:
+        traceback.print_exc()
+        sys.exit(2)
+    op_obj.handle_outputs(output)

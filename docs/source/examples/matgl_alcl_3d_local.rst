@@ -1,0 +1,52 @@
+Matgl-Al-3D-local
+===============
+
+.. code:: console
+
+    {
+        "dflow_config" : {
+            "mode" : "debug"
+        },
+        "aesp_config" : {
+            "type" : "std-sp",
+            "opt_params" : {
+                "generation" : {
+                    "adaptive" : {}
+                },
+                "population" : {
+                    "adaptive" : {}
+                },
+                "operator" : {
+                    "type" : "bulk",
+                    "generator" : {
+                        "random_gen_params" : {
+                            "composition" : {"Al": 8}
+                        }
+                    },
+                    "mutation" : {
+                        "strain_mut_params" : {},
+                        "permutation_mut_params" : {},
+                        "ripple_mut_params" : {}
+                    },
+                    "crossover" : {
+                        "plane_cross_params" : {},
+                        "sphere_cross_params" : {},
+                        "cylinder_cross_params" : {}
+                    },
+                    "adaptive" : {},
+                    "hard_constrains" : {
+                        "tol_matrix" : {}
+                    }
+                },
+                "cvg_criterion" : {}
+            },
+            "calc_stages" : [
+                {
+                    "type" : "emt",
+                    "inputs_config" : {},
+                    "run_config" : {}
+                }
+            ],
+            "step_configs" : {}
+        }
+    }

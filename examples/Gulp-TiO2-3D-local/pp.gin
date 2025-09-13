@@ -1,0 +1,14 @@
+species
+Ti core 2.196
+O  core -1.098
+buckingham
+Ti core Ti core 31120.1 0.1540 5.25  0.0 15.0
+O  core O  core 11782.7 0.2340 30.22 0.0 15.0
+Ti core O  core 16957.5 0.1940 12.59 0.0 15.0
+lennard 12 6
+Ti core Ti core 1 0 0 15
+O  core O  core 1 0 0 15
+Ti core O  core 1 0 0 15
+maxcyc 850
+time 60
+

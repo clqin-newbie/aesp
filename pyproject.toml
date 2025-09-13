@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aesp"
+authors = [{name = "Chenglong Qin", email = "clqin@foxmail.com"}]
+
+maintainers = [{name = "Chenglong Qin", email = "clqin@foxmail.com"}]
+
+description = "aesp(Adaptive Evolutionary Structure Predictor) is a crystal structure prediction tool written in Python."
+
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+keywords = ["CSP", 'DL']
+classifiers = ["Programming Language :: Python :: 3"]
+dependencies = ["pyxtal", "pydflow", "dargs", "dscribe", "art", "dpdata", "dpdispatcher", "nicegui"]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+docs = [
+    'sphinx',
+    'sphinx-book-theme',
+    'sphinx-argparse',
+    "dargs",
+    "myst_parser"
+]
+
+[project.urls]
+Documentation = "https://clqin-newbie.github.io/aesp/"
+Repository = "https://github.com/clqin-newbie/aesp.git"
+Issues = "https://github.com/clqin-newbie/aesp/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[project.scripts]
+aesp = "aesp.entrypoint.main:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "aesp.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["aesp", "aesp.*"]
